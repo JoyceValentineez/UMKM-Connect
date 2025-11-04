@@ -633,6 +633,14 @@ footer {
     flex: 1;
 }
 
+.footer-section:first-child {
+    flex: 2;
+}
+
+.footer-section:last-child {
+    text-align: right;
+}
+
 .footer-logo {
     margin-bottom: 20px;
 }
@@ -655,14 +663,24 @@ footer {
     text-align: left;
 }
 
+.footer-section:last-child p {
+    text-align: right;
+}
+
 .footer-section ul {
     list-style: none;
+}
+
+.footer-section:first-child ul {
     text-align: left;
+}
+
+.footer-section:last-child ul {
+    text-align: right;
 }
 
 .footer-section ul li {
     margin-bottom: 12px;
-    text-align: left;
 }
 
 .footer-section ul li a {
@@ -671,12 +689,17 @@ footer {
     transition: var(--transition);
     font-size: 1.05rem;
     display: inline-block;
-    text-align: left;
 }
 
-.footer-section ul li a:hover {
+.footer-section:first-child ul li a:hover {
     color: var(--white);
     transform: translateX(8px);
+    font-weight: 500;
+}
+
+.footer-section:last-child ul li a:hover {
+    color: var(--white);
+    transform: translateX(-8px);
     font-weight: 500;
 }
 
@@ -684,7 +707,14 @@ footer {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+}
+
+.footer-section:first-child .social-links {
     justify-content: flex-start;
+}
+
+.footer-section:last-child .social-links {
+    justify-content: flex-end;
 }
 
 .social-links a {
@@ -751,6 +781,7 @@ footer {
         width: 100%;
     }
     
+     /* Footer */
     .footer-content {
         flex-direction: column;
         gap: 40px;
@@ -761,7 +792,23 @@ footer {
         width: 100%;
     }
     
+    .footer-section:last-child {
+        text-align: left;
+    }
+    
+    .footer-section:last-child p {
+        text-align: left;
+    }
+    
+    .footer-section:last-child ul {
+        text-align: left;
+    }
+    
     .social-links {
+        justify-content: flex-start;
+    }
+    
+    .footer-section:last-child .social-links {
         justify-content: flex-start;
     }
 }
@@ -942,17 +989,40 @@ footer {
         margin-right: 8px;
     }
     
-    /* Footer Mobile */
+     /* Footer Mobile */
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
     .footer-section {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .footer-section:last-child {
         text-align: left;
     }
     
-    .footer-section p {
+    .footer-section:last-child p {
+        text-align: left;
+    }
+    
+    .footer-section:last-child ul {
         text-align: left;
     }
     
     .social-links {
         justify-content: flex-start;
+    }
+    
+    .footer-section:last-child .social-links {
+        justify-content: flex-start;
+    }
+    
+    .footer-section:first-child ul li a:hover,
+    .footer-section:last-child ul li a:hover {
+        transform: translateX(8px);
     }
 }
 
